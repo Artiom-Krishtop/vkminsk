@@ -139,7 +139,7 @@
                 </div> <!-- end row -->
 				<?php if (isset($themeum_options['copyright-en']) && $themeum_options['copyright-en']){?>
 					<div class="copyright">
-						<a class="tibo" target="_blank" title="Участник «Интернет-премии «ТИБО-2020»" href="http://tibo.by/ip/"></a>
+						<!-- <a class="tibo" target="_blank" title="Участник «Интернет-премии «ТИБО-2020»" href="http://tibo.by/ip/"></a> -->
 						<!-- <ul class="networks">
 							<li><a href="https://vk.com/vc.minsk" target="_blank"><i class="fa fa-vk fa-3" aria-hidden="true"></i></a></li>
 							<li><a href="https://www.facebook.com/vcminsk" target="_blank"><i class="fa fa-facebook fa-3" aria-hidden="true"></i></a></li>

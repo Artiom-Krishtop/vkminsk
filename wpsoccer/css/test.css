@@ -2187,7 +2187,7 @@ body .footer-wrap-inner .container {
 	background: #f8f7f7;
 }
 #footer .container {
-	width: 1100px;
+	width: 100%;
 	border-top: none;
 	box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.15);
@@ -2220,7 +2220,7 @@ body .footer-wrap-inner .container {
     background-color: rgb(46, 61, 157);
     opacity: 0.8;
     position: absolute;
-    left: -50px;
+    left: 0px;
     top: 0px;
     width: 116px;
     height: 116px;
@@ -2230,7 +2230,7 @@ body .footer-wrap-inner .container {
   background-color: rgb(66, 79, 166);
   opacity: 0.502;
   position: absolute;
-  right: -42px;
+  right: 0px;
   width: 167px;
   height: 167px;
   bottom: 25px;
@@ -2241,7 +2241,7 @@ body .footer-wrap-inner .container {
     position: absolute;
     height: 250px;
     z-index: -1;
-    width: 1100px;
+    width: 100%;
     margin: 0 auto;
     right: 0px;
     left: 0px;
@@ -2272,6 +2272,11 @@ body .footer-wrap-inner .container {
 #menu-footer-6 a {
 	margin-top: 20px;
 	margin-bottom: 0px;
+}
+@media (min-width: 760px){
+	#footer .row{
+		padding-left: 50px;
+	}
 }
 .copyright {
 	margin: 0px;
