@@ -1,0 +1,8 @@
+@for $i from 1 through 100 {
+  .top .char#{$i} { 
+  	transform: rotate(($i*6)+deg);
+  }
+  .bottom .char#{$i} { 
+  	transform: rotate(($i*-6+28)+deg);
+  }
+}
