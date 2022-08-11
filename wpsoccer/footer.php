@@ -1,6 +1,6 @@
 <!-- start footer -->
     <?php global $themeum_options; ?>
-	<?if( !is_front_page() ):?>
+	<?if( !is_front_page() || !get_queried_object_id() == 25757):?>
 		<div class="container sponsors-carousel vc_column-inner ">
 			<?if(get_locale()=="en_GB"):?>
 					<div class="themeum-title"><div class="themeum-title-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div><h2 style="color:#000000;font-size:24px;margin-bottom:30px;padding:0px 0px 0px 0px;font-weight:700;"><span>Оur sponsors</span></h2></div>

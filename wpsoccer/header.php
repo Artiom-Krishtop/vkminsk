@@ -38,11 +38,6 @@ global $themeum_options;
 
 	  gtag('config', 'UA-78415380-12');
 	</script>
-
-	<? if(get_queried_object_id() == 25757 || get_queried_object_id() == 26050 || get_queried_object_id() == 25487):?>
-        <link rel="stylesheet" href="/wp-content/themes/wpsoccer/css/test.css"/>
-    <? endif; ?>
-
 </head>
 
  <?php 
@@ -66,7 +61,7 @@ global $themeum_options;
         <div class="bg__img bg__img--7"></div>
         <div class="bg__img bg__img--8"></div>
 	</div>
-	<div id="page" class="hfeed <? if(get_queried_object_id() == 25757 || get_queried_object_id() == 26050 || get_queried_object_id() == 25487){echo 'test-container-itg';}?> site <?php echo esc_attr($layout); ?>">
+	<div id="page" class="hfeed site <?php echo esc_attr($layout); ?>">
 		<header id="masthead" class="site-header header" role="banner">
 			<div id="header-container">
 				<div id="navigation" class="container">

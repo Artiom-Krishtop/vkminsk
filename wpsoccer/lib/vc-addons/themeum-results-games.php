@@ -163,7 +163,7 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                             $('.result-items').owlCarousel({
                                 items: 2,
                                 loop: true,
-                                dots:false,
+                                dots:true,
                                 nav:false,
                                 autoplay: true,
                                 autoplayTimeout:". $slider_interval .",

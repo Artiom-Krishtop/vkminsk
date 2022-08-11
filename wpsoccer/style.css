@@ -471,6 +471,28 @@ img.no-photo{
    font-style: italic;
 }
 
+.result-container .owl-dots{
+   width: auto;
+   margin: 0px auto;
+   text-align: center;
+}
+
+.result-container .owl-dots button{
+   display: inline-block;
+   width: 13px;
+   height: 13px;
+   padding: 0px!important;
+   margin: 2px;
+   border-radius: 50%;
+   border: none;
+   background-color: #2e3d9d;
+}
+.result-container .owl-dots button.active{
+   border: 1px solid #2e3d9d;
+   background-color: #fff;
+   opacity: .75;
+}
+
 @media (max-width: 480px) {
    .result-container .result__item{
       padding: 10px 0px;
@@ -642,15 +664,6 @@ tr.calendar-games-table__row td.league{padding-right: 10px;}
 }
 
 /* конец календарь игр */
-
-#page.test-container-itg{
-   max-width: 1600px!important;
-   width: auto!important;
-}
-
-.sub-title:not(.front-page) + .container {
-   width: auto!important;
-}
 
 
 

@@ -43,6 +43,11 @@ define('THEMEUMNAME', wp_get_theme()->get( 'Name' ));
 define('THMCSS', get_template_directory_uri().'/css/');
 define('THMJS', get_template_directory_uri().'/js/');
 
+function dd($text){
+	echo '<pre>' . print_r($text, 1) . '</pre>';
+	die();
+}
+
 if((!class_exists('RWMB_Loader'))&&(!defined('RWMB_VER'))){
 // Include the meta box script
 require_once (get_template_directory().'/lib/meta-box/meta-box.php');
@@ -82,6 +87,7 @@ require_once( get_template_directory()  . '/lib/vc-addons/themeum-club-list.php'
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-statistic-games.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-results-games.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themium-calendar-games.php');
+require_once( get_template_directory()  . '/lib/vc-addons/themeum-birthday-block.php');
 
 /*-------------------------------------------------------
  *				Redux Framework Options Added
