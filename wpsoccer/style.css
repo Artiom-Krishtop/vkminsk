@@ -665,5 +665,62 @@ tr.calendar-games-table__row td.league{padding-right: 10px;}
 
 /* конец календарь игр */
 
+.b-birthday-block{
+   padding: 35px 0px;
+}
+
+.b-birthday-block .birthday-text{
+   text-align: center;
+   font-family: 'Arial';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 26px;
+   line-height: 41px;
+   color: #FFFFFF;
+}
+
+.b-birthday-block .birthday-text span.birthday-player{
+   display: block;
+   margin-bottom: 10px;
+}
+
+.b-birthday-block .birthday-text span.birthday-player:first-of-type{
+   margin-top: 20px;
+}
+
+@media (max-width: 1100px){
+   .b-birthday-block .birthday-text{
+      font-size: 22px;
+      line-height: 35px;
+   }
+}
+
+@media (max-width: 760px){
+   .b-birthday-block .birthday-text{
+      font-size: 18px;
+      line-height: 30px;
+   }
+
+   .b-birthday-block .birthday-text span.birthday-player:first-of-type{
+      margin-top: 15px;
+   }
+}
+
+@media (max-width: 645px){
+   .b-birthday-block .birthday-text{
+      font-size: 16px;
+      line-height: 24px;
+   }
+
+   .b-birthday-block .birthday-text span.birthday-player{
+      margin-bottom: 5px;
+   }
+
+   .b-birthday-block .birthday-text span.birthday-player:first-of-type{
+      margin-top: 10px;
+   }
+}
+
+
 
 

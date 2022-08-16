@@ -1,6 +1,11 @@
 <?php
 add_shortcode( 'themeum_club_list', function($atts, $content = null) {
 
+    extract(shortcode_atts(array(
+        'additional_link' => ''
+		), $atts));
+
+
     $posts = get_posts([
         'post_type'   => 'club',
         'meta_key' => 'themeum_club_title_show_sort',
@@ -15,12 +20,32 @@ add_shortcode( 'themeum_club_list', function($atts, $content = null) {
             ] 
         ]);
 
+    if(!empty($additional_link)){
+        $additional_link = str_replace(' ', '', htmlspecialchars($additional_link));
+        $additional_link = explode(';', $additional_link);
+
+        $additionalPosts = get_posts([
+            'post_type' => 'page',
+            'orderby' => 'post__in',
+            'order' => 'ASC',
+            'posts_per_page' => count($additional_link),
+            'include' => $additional_link
+            ]);
+
+        $posts = array_merge($posts, $additionalPosts);
+    }
+
     $output = '<div class="themeum-club-list-container">';
 
     if(!empty($posts)){
         foreach ($posts as $post) {
+            if($post->post_type == 'club'){
+                $background = get_post_meta($post->ID, 'themeum_club_title_show_background')[0];
+            }else{
+                $background = get_field('background-color', $post->ID);
+            }
 
-            $output .= '<div class="themeum-cliub__item" style="background-color: ' . get_post_meta($post->ID, 'themeum_club_title_show_background')[0] . '">';
+            $output .= '<div class="themeum-cliub__item" style="background-color: ' . $background . '">';
             $output .= '<a href="'. get_permalink($post->ID) .'"></a>';
             $output .= '<div class="club-item__logo">';
 
@@ -51,6 +76,14 @@ if (class_exists('WPBakeryVisualComposerAbstract')) {
         'icon' => 'icon-thm-latest-match',
         "description" => __("Club List", "themeum"),
         "category" => __('Themeum', "themeum"),
-        "params" => []
+        "params" => [
+            [
+                "type" => "textarea",
+                "heading" => __("Дополнительные записи", "themeum"),
+                "param_name" => "additional_link",
+                "description" => __("Введите ID постов,разделяя их точкой с запятой (;)", "themeum" ),
+                "value" => [],
+            ]
+        ]
     ]);
 }
