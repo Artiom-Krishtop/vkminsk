@@ -29,6 +29,8 @@ add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
     
     $firstPost = array_shift($posts);
 
+    $categoryName = getCategoryName($firstPost->ID);
+
     $output .= '<div class="themeum-preview-thumb-item">';
     $output .= '<div class="themeum-preview-thumb-item__image">';
     $output .= '<a href="'. get_permalink($firstPost->ID) .'" >';
@@ -41,15 +43,16 @@ add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
     
     $output .= '</a></div>';
     $output .= '<div class="themeum-preview-thumb-item__description">';
+    $output .= '<span class="thumb-description-section">' . $categoryName . '</span>';
     $output .= '<a href="'. get_permalink($firstPost->ID) .'" ><h4 class="thumb-description-header">' . $firstPost->post_title . '</h4></a>';
     $output .= '<span class="thumb-description-data">' . get_the_date('d F Y', $firstPost->ID) . '</span></div></div>';
     $output .= '</div>';
-
-    $output .= '<div class="themeum-preview-thumb right-column">'; 
+    $output .= '<div class="themeum-preview-thumb right-column">';
 
     foreach ($posts as $post) {
-
         $newsTitle = strlen($post->post_title) >= $desc_length ? mb_substr($post->post_title, 0, $desc_length) . '...' : $post->post_title;
+
+        $categoryName = getCategoryName($post->ID);
 
         $output .= '<div class="themeum-preview-thumb-item">';
         $output .= '<div class="themeum-preview-thumb-item__image">';
@@ -63,6 +66,7 @@ add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
 
         $output .= '</a></div>';
         $output .= '<div class="themeum-preview-thumb-item__description">';
+        $output .= '<span class="thumb-description-section">' . $categoryName . '</span>';
         $output .= '<a href="'. get_permalink($post->ID) .'" ><h5 class="thumb-description-header">' . $newsTitle . '</h5></a>';
         $output .= '<span class="thumb-description-data">' . get_the_date('d F Y', $post->ID) . '</span></div></div>';
     }
@@ -79,6 +83,18 @@ function themeum_cat_id_list(){
 		$all_cat_list[$cat_list->cat_name] = $cat_list->term_id;
 	}
 	return $all_cat_list;
+}
+
+function getCategoryName($postId){
+    $category = get_the_category($postId);
+
+    if(empty($category)){
+        $categoryName = 'Новости';
+    }else{
+        $categoryName = $category[0]->name;
+    }
+
+    return $categoryName;
 }
 
 //Visual Composer
