@@ -12,7 +12,7 @@ add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
     $args = [];
 
     if($category != ''){
-        $args['categoty'] = intval($category);
+        $args['category'] = intval($category);
     }
     $args['orderby'] = $sortby;
     $args['order'] = $order;

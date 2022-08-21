@@ -17,7 +17,9 @@ get_header(); ?>
                 <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
                 <div class="row">
                     <div class="entry-thumbnail col-md-12">
-                        <?php the_post_thumbnail(); ?>
+                        <div class="entry-thumbnail-img-wraper">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
                     </div>
                 </div>
             <?php endif; ?>

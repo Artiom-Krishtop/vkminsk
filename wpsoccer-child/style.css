@@ -2277,7 +2277,7 @@ body .footer-wrap-inner .container {
 }
 @media (min-width: 760px){
 	#footer .row{
-		padding-left: 50px;
+		padding-left: 100px;
 	}
 }
 .copyright {
@@ -3005,7 +3005,7 @@ body .top-players-row {
 body #footer .navbar-brand>img {
     margin: 0px;
     margin-top: -5px;
-    margin-left: 3px;
+    margin-left: 20px;
 }
 #menu-item-16921 {
 	margin-bottom: 0;
@@ -3037,6 +3037,7 @@ body #footer .navbar-brand>img {
 	}
 	#footer #nav_menu-2 .widget_title, #footer .widget_nav_menu ul {
 		margin-left: 0px;
+		text-align: center;
 	}
     .main-news .highlights-style2-item h3 {
     	margin-top: 0px;
@@ -4312,6 +4313,8 @@ body .player-profile-banner[style^="background-image"] {
 	width: 150px;
     border-radius: 50%;
     border: 3px solid #ffffff;
+	object-fit: cover;
+    object-position: center;
 }
 .styleimg::before {
 	position: absolute;

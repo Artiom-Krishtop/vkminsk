@@ -748,6 +748,102 @@ tr.calendar-games-table__row td.league{padding-right: 10px;}
    }
 }
 
+footer .row{position: relative;}
+
+/* навигационные иконки в футере */
+
+.b-footer-nav-images .nav-images__item{
+   position: relative;
+   display: inline-block;
+   list-style-type: none;
+   width: 60px;
+   height: 60px;
+   background-color: #2A318A;
+   border-radius: 50%;
+   text-align: center;
+   z-index: 10;
+}
+.b-footer-nav-images .nav-images__link{
+   display: inline-block;
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+   padding-top: 10px;
+} 
+
+.b-footer-nav-images .nav-images__img{
+   width: 40px;
+   height: 40px;
+}
+
+@media (min-width: 1200px){
+   .b-footer-naw-wraper{
+      position: absolute;
+      right: 60px;
+      bottom: -50px;
+   }
+}
+
+@media (max-width: 1199px){
+   .b-footer-nav-images{
+      float: right;
+      padding-right: 100px;
+   }
+}
+
+@media (max-width: 991px){
+   .b-footer-nav-images{
+      float: right;
+      padding-right: 150px; 
+   }
+}
+
+@media (max-width: 767px){
+   .b-footer-nav-images{
+      width: 260px;
+      margin: 10px auto;
+      float: none;
+      padding: 0px;
+   }
+}
+
+/* конец навигационные иконки в футере */
+.entry-thumbnail{
+   margin: 20px 0px;
+}
+
+.entry-thumbnail .entry-thumbnail-img-wraper{
+   margin: 0px auto;
+}
+
+.entry-thumbnail img{
+   width: 100%;
+   height: 100%;
+}
+
+@media (min-width: 767px){
+   .entry-thumbnail .entry-thumbnail-img-wraper{
+      width: 600px;
+      height: 600px;
+   }
+}
+
+@media (max-width: 766px){
+   .entry-thumbnail .entry-thumbnail-img-wraper{
+      width: 400px;
+      height: 400px;
+   }
+}
+
+@media (max-width: 500px){
+   .entry-thumbnail .entry-thumbnail-img-wraper{
+      width: 200px;
+      height: 200px;
+   }
+}
+
+
+
 
 
 

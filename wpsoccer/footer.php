@@ -67,7 +67,7 @@
             	<div class="footer__circleleft"></div>
             	<div class="footer__circleright"></div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-4 col-xs-12">
+                    <div class="col-md-5 col-sm-4 col-xs-12">
                         <div class="thm-footer-1-inner">
 							<a class="navbar-brand" title="<?php echo get_bloginfo(); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 							<?php
@@ -100,43 +100,37 @@
                               
                         </div>            
                     </div>
-
-					
-
-					<div class="footer__menu col-md-6 col-sm-4 col-xs-12">
-
-
-					<div class="col-sm-8 col-xs-12">
-						<?php //dynamic_sidebar('Footer Title'); ?>   
+					<div class="footer__menu col-md-3 col-sm-4 col-xs-12">
+						<div class="col-sm-8 col-xs-12">
+							<?php //dynamic_sidebar('Footer Title'); ?>   
+						</div>
+						<div class="col-md-12 col-sm-2 col-xs-3">
+							<?php dynamic_sidebar('Footer 2'); ?>   
+						</div>
+						<div class="col-md-12 col-sm-2 col-xs-3">
+							<?php dynamic_sidebar('Footer 3'); ?>
+						</div> 
+						<div class="col-md-12 col-sm-2 col-xs-3">
+							<?php dynamic_sidebar('Footer 4'); ?>  
+						</div> 
+						<div class="col-md-12 col-sm-2 col-xs-3">
+							<?php dynamic_sidebar('Footer 5'); ?>
+							<!--<a class="tibo" target="_blank" title="Участник «Интернет-премии «ТИБО-2018»»" href="http://tibo.by/internet-premiya-tibo/"></a>-->
+						</div>
+						<div class="col-md-12 col-sm-2 col-xs-3">
+							<?php dynamic_sidebar('Footer 6'); ?>
+						</div>
 					</div>
-                    <div class="col-md-12 col-sm-2 col-xs-3">
-                        <?php dynamic_sidebar('Footer 2'); ?>   
-                     </div>
-
-                     <div class="col-md-12 col-sm-2 col-xs-3">
-                        <?php dynamic_sidebar('Footer 3'); ?>
-                     </div> 
-
-                     <div class="col-md-12 col-sm-2 col-xs-3">
-                        <?php dynamic_sidebar('Footer 4'); ?>  
-                     </div> 
-
-                     <div class="col-md-12 col-sm-2 col-xs-3">
-                        <?php dynamic_sidebar('Footer 5'); ?>
-						<!--<a class="tibo" target="_blank" title="Участник «Интернет-премии «ТИБО-2018»»" href="http://tibo.by/internet-premiya-tibo/"></a>-->
-                     </div>
-
-                     <div class="col-md-12 col-sm-2 col-xs-3">
-                        <?php dynamic_sidebar('Footer 6'); ?>
-                     </div>
-
-
-				</div>
-
-
-
-
+					<div class="b-footer-naw-wraper col-lg-4 col-sm-12 col-xs-12">
+						<ul class="b-footer-nav-images">
+							<li class="nav-images__item"><a href="<?= get_permalink(25474)?>" class="nav-images__link"><img src="/wp-content/themes/wpsoccer/images/ball.png" class="nav-images__img"></a></li>
+							<li class="nav-images__item"><a href="<?= get_permalink(1386)?>" class="nav-images__link"><img src="/wp-content/themes/wpsoccer/images/human.png" class="nav-images__img"></a></li>
+							<li class="nav-images__item"><a href="<?= get_permalink(12734)?>" class="nav-images__link"><img src="/wp-content/themes/wpsoccer/images/hands.png" class="nav-images__img"></a></li>
+							<li class="nav-images__item"><a href="<?= get_permalink(17823)?>" class="nav-images__link"><img src="/wp-content/themes/wpsoccer/images/weight.png" class="nav-images__img"></a></li>
+						</ul>
+					</div>
                 </div> <!-- end row -->
+
 				<?php if (isset($themeum_options['copyright-en']) && $themeum_options['copyright-en']){?>
 					<div class="copyright">
 						<!-- <a class="tibo" target="_blank" title="Участник «Интернет-премии «ТИБО-2020»" href="http://tibo.by/ip/"></a> -->
