@@ -34,7 +34,6 @@ add_shortcode( 'themeum_yt_video_slider', function($atts, $content = null) {
                                     auto: true,
                                     pause: ' . $interval . ',
                                     autoStart: true,
-                                    touchEnabled: true,
                                     responsive: true
                                 });
                             });
