@@ -134,22 +134,25 @@
 				<?php if (isset($themeum_options['copyright-en']) && $themeum_options['copyright-en']){?>
 					<div class="copyright">
 						<!-- <a class="tibo" target="_blank" title="Участник «Интернет-премии «ТИБО-2020»" href="http://tibo.by/ip/"></a> -->
-						<!-- <ul class="networks">
-							<li><a href="https://vk.com/vc.minsk" target="_blank"><i class="fa fa-vk fa-3" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.facebook.com/vcminsk" target="_blank"><i class="fa fa-facebook fa-3" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.instagram.com/vcminsk/" target="_blank"><i class="fa fa-instagram fa-3" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.youtube.com/channel/UCPeTf0VbkGp2-6pJtZRlasA/videos" target="_blank"><i class="fa fa-youtube-play fa-3" aria-hidden="true"></i></a></li>
-							<li><a href="https://twitter.com/vc_minsk" target="_blank"><i class="fa fa-twitter fa-3" aria-hidden="true"></i></a></li>
-						</ul> -->
 						<?php if(isset($themeum_options['copyright-text'])) :?>
-							<div class="wpb_column vc_column_container vc_col-sm-3">
+							<div class="wpb_column vc_column_container">
 								<div class="vc_column-inner ">
 									<?php echo balanceTags($themeum_options['copyright-text']); ?>
 								</div>	
 							</div>	
 						<?endif;?>
+						<div class="b-social-wrapper">
+							<ul class="networks">
+								<li><a href="https://vk.com/vc.minsk" target="_blank"><i class="fa fa-vk fa-3" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.facebook.com/vcminsk" target="_blank"><i class="fa fa-facebook fa-3" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.instagram.com/vcminsk/" target="_blank"><i class="fa fa-instagram fa-3" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.youtube.com/channel/UCPeTf0VbkGp2-6pJtZRlasA/videos" target="_blank"><i class="fa fa-youtube-play fa-3" aria-hidden="true"></i></a></li>
+								<li><a href="https://twitter.com/vc_minsk" target="_blank"><i class="fa fa-twitter fa-3" aria-hidden="true"></i></a></li>
+								<li><a href="https://t.me/vcminsk" target="_blank"><i class="fa fa-telegram fa-3" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
 						<?if(get_locale()=="en_GB"):?>
-							<div class="itgarant wpb_column vc_column_container vc_col-sm-3">
+							<div class="itgarant wpb_column vc_column_container">
 								<div class="itg-soft span4">
 									<span>
 										<a class="itg-soft-order" href="https://itg-soft.by" target="_blank" title="">Website development</a> &nbsp;<a class="itg-soft-company" href="https://itg-soft.by" target="_blank" title="Website development in Minsk — ITG-SOFT.by">ITG-SOFT &lt;/&gt;</a>
@@ -157,7 +160,7 @@
 								</div>
 							</div>							
 						<?else:?>
-							<div class="itgarant wpb_column vc_column_container vc_col-sm-3">
+							<div class="itgarant wpb_column vc_column_container">
 								<div class="itg-soft span4 vc_column-inner ">
 									<span>
 										<a class="itg-soft-company" href="https://itg-soft.by" target="_blank" title="Разработка сайтов в Минске — ITG-SOFT.by">Разработка сайтов в Минске - </a> &nbsp;<!-- <a class="itg-soft-company" href="https://itg-soft.by" target="_blank" title="Разработка сайтов в Минске — ITG-SOFT.by"> -->ITG-SOFT &lt;/&gt;<!-- </a> -->

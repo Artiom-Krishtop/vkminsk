@@ -528,12 +528,6 @@ div[id*="tab-"], .ui-state-default,
 .wpb_tabs .wpb_tabs_nav li + li{
 	margin-left: 25px !important;	
 }
-.copyright .vc_col-sm-6 *{
-	text-align: right;
-}
-.copyright .vc_col-sm-6 + .vc_col-sm-6 *{
-	text-align: left;
-}
 .all-news {
     position: absolute;
     right: 14px;
@@ -632,20 +626,6 @@ div[id*="tab-"], .ui-state-default,
 	font-size: 24px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 1199px){
 	.recent-result-carousel-control{
 		top: -27px;
@@ -664,18 +644,6 @@ div[id*="tab-"], .ui-state-default,
 	.main-news .entry-title{
 		margin-top: 60px;
 	}
-	/*.preview .recent-result-carousel-control{
-		font-size: 45px;
-		right: -47px;
-		position: absolute;
-		margin: 0 !important;
-	}
-	.preview .left:not(.item) {
-	    top: 176px;
-	}	
-	.preview .right:not(.item) {
-		top: 37px;
-	}*/
 	.preview  .vc_tta.vc_general .vc_tta-panel-body{
 		overflow: visible !important;
 	}
@@ -724,24 +692,10 @@ div[id*="tab-"], .ui-state-default,
 	.vc_custom_1540553715478 {
 		margin-top: 0px !important;
 	}
-	/*.vc_column_container>.vc_column-inner {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}*/
 	.tabs-block .wpb_tabs_nav a, .tabs-block .vc_tta-title-text {
 		color: #000;
 		font-size: 14px;
 	}
-	/*.vc_row-fluid .wpb_row {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.vc_row {
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-		max-width: 100%;
-	}*/
 	.home-search{
 		float: right;
 	}
@@ -807,9 +761,6 @@ div[id*="tab-"], .ui-state-default,
 	#carousel-player{
 		margin-bottom: 25px;
 	}
-	.copyright .vc_col-sm-6 + .vc_col-sm-6 * {
-		text-align: right;
-	}
 }
 @media (max-width: 560px){
 	.sec-menu:not(.trophies) {
@@ -826,9 +777,6 @@ div[id*="tab-"], .ui-state-default,
 		float: none;
 		display: block !important;
 		text-align: center;
-	}
-	.copyright .vc_col-sm-6 + .vc_col-sm-6 * {
-		text-align: right;
 	}
 }
 @media (max-width: 767px) and (min-width: 481px){ 
@@ -889,10 +837,7 @@ body #footer .navbar-brand>img {
     padding-top: 56px;
     border-top: 3px solid transparent;
 }
-.copyright {
-    border-top: 0;
-    font-size: 12px;
-}
+
 .footer-wrap .widget h3.widget_title {
     font-size: 22px;
     font-weight: 500;
@@ -965,7 +910,7 @@ iframe{
 	z-index: 0;
 }
 .networks{
-    list-style: none;
+    /* list-style: none;
     width: auto;
     display: block;
     text-align: center;
@@ -974,7 +919,7 @@ iframe{
     margin: 0 auto;
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-26px);
+    transform: translate(-50%,-26px); */
 }
 .networks li{
     float: left;
@@ -1179,9 +1124,6 @@ body .player-profile-banner[style^="background-image"] .container{
     margin-right: 50px;
     width: 125px;
     height: 125px;
-}
-.copyright{
-	position: relative;
 }
 
 @media (max-width: 767px) {
@@ -2280,17 +2222,7 @@ body .footer-wrap-inner .container {
 		padding-left: 100px;
 	}
 }
-.copyright {
-	margin: 0px;
-	padding: 0px;
-	padding-top: 25px;
-}
-.copyright .vc_column-inner  {
-	font-size: 9px;
-	text-transform: uppercase;
-	font-weight: 400;
-	display: flex;
-}
+
 body .itg-soft-company, body .itg-soft-company:link, body .itg-soft-company:visited, body .itg-soft-company:focus {
 	border: none!important;
 }
@@ -2990,18 +2922,7 @@ body .top-players-row {
 #footer .widget ul li a {
 	font-weight: bold;
 }
-#footer .widget ul li a:hover, .footer-wrap .footer-wrap-inner a:hover, .copyright a:hover {
-	color: #36B1F0 !important;
-	text-decoration: none;
-	transition: none;
-}
-#footer .copyright .vc_column-inner {
-	font-family: 'Gotham Pro Light';
-    font-weight: bold;
-    margin-top: -5px;
-    margin-left: 5px;
-    letter-spacing: -0.1px;
-}
+
 body #footer .navbar-brand>img {
     margin: 0px;
     margin-top: -5px;
@@ -3011,9 +2932,7 @@ body #footer .navbar-brand>img {
 	margin-bottom: 0;
     margin-top: -10px;
 }
-#footer .copyright .vc_column-inner span {
-	margin-left: -17px;
-}
+
 #footer .itgarant {
 	width: 30%;
 }
@@ -3183,9 +3102,7 @@ body header #navigation {
 #footer .widget ul > li {
 	justify-content: center;
 }
-#footer .copyright {
-	padding-top: 15px;
-}
+
 #footer .vc_column_container>.vc_column-inner {
 	display: flex;
 	justify-content: center;
@@ -3378,9 +3295,7 @@ body .woo-menu-item-add .enter-logo {
 #footer .widget ul > li {
 	justify-content: center;
 }
-#footer .copyright {
-	padding-top: 15px;
-}
+
 #footer .vc_column_container>.vc_column-inner {
 	display: flex;
 	justify-content: center;
@@ -3542,9 +3457,7 @@ table {
 	#footer .widget ul > li {
 		justify-content: center;
 	}
-	#footer .copyright {
-		padding-top: 15px;
-	}
+
 	#footer .vc_column_container>.vc_column-inner {
 		display: flex;
 		justify-content: center;
@@ -4608,5 +4521,90 @@ font-family: Gotham Pro bold !important;
 .yt-video-video {
     position: static;
     width: 100%;
+}
+
+#footer .widget ul li a:hover, .footer-wrap .footer-wrap-inner a:hover, .copyright a:hover {
+	color: #36B1F0 !important;
+	text-decoration: none;
+	transition: none;
+}
+
+#footer .copyright{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 60px;
+	font-family: 'Gotham Pro Light';
+    font-weight: bold!important;
+	color: #000;
+    letter-spacing: -0.1px;
+	font-size: 9px;
+    font-weight: 400;
+    line-height: 9px;
+    text-transform: uppercase;
+	
+}
+
+#footer .copyright > div{
+	width: 30%!important;
+}
+
+#footer .copyright > div.itgarant{
+	width: 40%!important;
+}
+
+#footer .copyright .vc_column-inner {
+	padding: 0px;
+}
+
+#footer .copyright .vc_column_container{
+	padding-top: 6px;
+}
+
+#footer .copyright .b-social-wrapper li{
+	font-size: 16px;
+	text-align: center;
+}
+
+#footer .copyright .b-social-wrapper ul.networks{
+	padding: 0px;
+}
+
+@media (max-width: 1199px){
+	#footer .copyright{
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 767px){
+	#footer .copyright{
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10px;
+	}
+
+	#footer .copyright > div{
+		padding-bottom: 5px;
+		width: 100%!important;
+	}
+
+	#footer .copyright > div.itgarant{
+		width: 100%!important;
+	}
+
+	#footer .copyright .b-social-wrapper ul.networks{
+		width: 170px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: nowrap;
+		margin: 0px auto;
+	}
+
+	#footer .copyright .b-social-wrapper li{
+		float: none;
+	}
 }
 
