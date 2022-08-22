@@ -17,6 +17,10 @@ add_shortcode( 'themeum_yt_video_slider', function($atts, $content = null) {
             $output .= '<div class="yt-video-slider-wraper"><div class="yt-video-slider-container" id="yt-video-slider">'; 
             
             foreach ($video_ids as $video_id) {
+                if(empty($video_id)){
+                    continue;
+                }
+
                 $output .= '<div class="yt-video-slider__item">';
                 $output .= '<iframe width="600" height="370" src="https://www.youtube.com/embed/' . $video_id . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                 $output .= '</div>';    
@@ -29,7 +33,9 @@ add_shortcode( 'themeum_yt_video_slider', function($atts, $content = null) {
                                 $("#yt-video-slider").bxSlider({
                                     auto: true,
                                     pause: ' . $interval . ',
-                                    autoStart: true
+                                    autoStart: true,
+                                    touchEnabled: true,
+                                    responsive: true
                                 });
                             });
                         </script>';
