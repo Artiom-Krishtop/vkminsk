@@ -38,6 +38,11 @@ global $themeum_options;
 
 	  gtag('config', 'UA-78415380-12');
 	</script>
+
+    <!-- bxslider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <!-- end bxslider -->
 </head>
 
  <?php 

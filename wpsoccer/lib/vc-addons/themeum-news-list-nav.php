@@ -3,7 +3,7 @@
 add_shortcode( 'themeum_news_list_nav', function($atts, $content = null) {
 
     extract(shortcode_atts([
-        'sortby'			=> 'slud',
+        'sortby'			=> 'slug',
 		'order'				=> 'DESC',
     ], $atts));
 
@@ -13,7 +13,8 @@ add_shortcode( 'themeum_news_list_nav', function($atts, $content = null) {
 
     $childNews = get_categories([
         'parent' => 111,
-        'hide_empty' => 0 ,
+        'hide_empty' => 0,
+        'numberposts' => 1,
         'sortby' => esc_attr($sortby),
         'order' => esc_attr($order)
     ]);

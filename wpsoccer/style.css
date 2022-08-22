@@ -842,6 +842,28 @@ footer .row{position: relative;}
    }
 }
 
+/* Слайдер видео из Ютуб */
+
+.yt-video-slider-wraper{
+   width: 600px;
+   margin: 0px auto;
+}
+
+.yt-video-slider-wraper iframe{
+   margin: 0px!important;
+}
+
+.yt-video-slider-wraper .bx-wrapper{
+   margin-bottom: 40px;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+   border: none;
+}
+
+/* Конец Слайдер видео из Ютуб */
+
+
 
 
 

@@ -88,6 +88,9 @@ require_once( get_template_directory()  . '/lib/vc-addons/themeum-statistic-game
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-results-games.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themium-calendar-games.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-birthday-block.php');
+require_once( get_template_directory()  . '/lib/vc-addons/themeum-yt-video-slider.php');
+
+
 
 /*-------------------------------------------------------
  *				Redux Framework Options Added
