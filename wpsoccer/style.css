@@ -61,14 +61,31 @@ img.no-photo{
    height: 100%;
 }
 
+.b-news-custom-nav-wrapper .b-news-custom-nav-empty{
+   text-align: center;
+   font-family: 'Arial';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 18px;
+	color: red;
+   text-transform: uppercase;
+
+}
+
 .b-news-custom-nav .b-news-custom-nav__item .b-news-custom-nav__link{
    font-family: 'Arial';
    font-style: normal;
    font-weight: 700;
    font-size: 22px;
 	color: black;
+   cursor: pointer;
 }
 .b-news-custom-nav .b-news-custom-nav__item .b-news-custom-nav__link:hover{
+	color: #2e3d9d;
+	opacity: .75;
+}
+
+.b-news-custom-nav .b-news-custom-nav__item .b-news-custom-nav__link.active{
 	color: #2e3d9d;
 	opacity: .75;
 }

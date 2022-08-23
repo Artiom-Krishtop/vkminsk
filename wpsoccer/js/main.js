@@ -291,7 +291,33 @@ jQuery(document).ready(function(){
 
     });
 
+	function getCustomListNews(catID){
+		let navContainer = $('#news-custom-nav');
+		let newsBlockWrapper = navContainer.parent('.b-news-custom-nav-wrapper');
+		let url = '/wp-admin/admin-ajax.php';
 
+		$.ajax({
+			url: url,
+			method: 'post',
+			dataType: 'html',
+			data: {action: "get_list_news", category_id: catID},
+			success: function(data){
+				if(data != 0 && data.length > 0){
+					let newsNewBlockWrapper = $(data);
 
+					if(newsNewBlockWrapper.length > 0 && newsNewBlockWrapper.hasClass('b-news-custom-nav-wrapper')){
+						newsBlockWrapper.replaceWith(newsNewBlockWrapper);
 
+						$('.js-news-custom-nav__item').on('click', function(){
+							getCustomListNews($(this).data('category-id'));
+						});
+					}
+				}
+			}
+		});
+	}
+	
+	$('.js-news-custom-nav__item').on('click', function(){
+		getCustomListNews($(this).data('category-id'));
+	});
 });

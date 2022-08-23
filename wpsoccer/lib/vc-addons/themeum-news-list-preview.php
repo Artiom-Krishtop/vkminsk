@@ -2,17 +2,52 @@
 add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
 
     extract(shortcode_atts([
-        'category' => '',
+        'category_id' => '',
         'sortby' => 'date',
         'order' => 'DESC',
-        'desc_length' => 50
+        'desc_length' => 50,
+        'navsortby'	=> 'slug',
+        'navorder' => 'DESC',
     ], $atts));
 
+    $output = '<div class="b-news-custom-nav-wrapper">';
+    $allNewsCategoryId = 111;
+
+    $allNews = get_categories([
+        'include' => [$allNewsCategoryId]
+    ]);
+
+    $childNews = get_categories([
+        'parent' => $allNewsCategoryId,
+        'hide_empty' => 0,
+        'numberposts' => 1,
+        'sortby' => esc_attr($navsortby),
+        'order' => esc_attr($navorder)
+    ]);
+
+    $news = array_merge($allNews, $childNews);
+
+    if (!empty($news)) {
+        
+        $output .= '<ul class="b-news-custom-nav" id="news-custom-nav">';
+
+        foreach ($news as $item) {
+            $active = '';
+
+            if((empty($category_id) && $item->cat_ID == $allNewsCategoryId) || ($item->cat_ID == $category_id)){
+                $active = ' active';
+            }
+
+            $output .= '<li class="b-news-custom-nav__item js-news-custom-nav__item" data-category-id="' . $item->cat_ID . '"><span class="b-news-custom-nav__link' . $active . '">'. $item->name .'</span></li>';
+        }
+
+        $output .= '</ul>';
+    }
 
     $args = [];
 
-    if($category != ''){
-        $args['category'] = intval($category);
+    if($category_id != ''){
+        $args['category'] = intval($category_id);
     }
     $args['orderby'] = $sortby;
     $args['order'] = $order;
@@ -20,10 +55,12 @@ add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
     $posts = get_posts($args);
 
     if(empty($posts)){
-        return '<div>Новости отсутствуют</div>';
+        $output .= '<div class="b-news-custom-nav-empty">Новости для данной категории отсутствуют</div>';
+        $output .= '</div>';
+
+        return $output;
     }
 
-    $output = '';
     $output .= '<div class="themeum-preview-container">';
     $output .= '<div class="themeum-preview-thumb left-column">';
     
@@ -71,7 +108,7 @@ add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
         $output .= '<span class="thumb-description-data">' . get_the_date('d F Y', $post->ID) . '</span></div></div>';
     }
 
-    $output .= '</div></div>';
+    $output .= '</div></div></div>';
 
     return $output;
 });
@@ -109,9 +146,15 @@ vc_map([
 "params" => [
     [
         "type" => "dropdown",
-        "heading" => __("Категория", "themeum"),
-        "param_name" => 'category',
-        "value" => themeum_cat_id_list(),
+        "heading" => __("Навигация. Сортировать по:", "themeum"),
+        "param_name" => "navsortby",
+        "value" => ['Ярлык' => 'slug', 'Название' => 'name'],
+    ],
+    [
+        "type" => "dropdown",
+        "heading" => __("Направление сортировки:", "themeum"),
+        "param_name" => "navorder",
+        "value" => ['Навигация. По возрастанию' => 'ASC', 'По убыванию' => 'DESC'],
     ],
     [
         "type" => "dropdown",

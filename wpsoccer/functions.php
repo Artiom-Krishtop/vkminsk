@@ -81,7 +81,6 @@ require_once( get_template_directory()  . '/lib/vc-addons/themeum-feature-items.
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-post-slider.php');
 require_once( get_template_directory()  . '/lib/vc-addons/wc-latest-products.php');
 
-require_once( get_template_directory()  . '/lib/vc-addons/themeum-news-list-nav.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-news-list-preview.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-club-list.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-statistic-games.php');
@@ -90,7 +89,9 @@ require_once( get_template_directory()  . '/lib/vc-addons/themium-calendar-games
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-birthday-block.php');
 require_once( get_template_directory()  . '/lib/vc-addons/themeum-yt-video-slider.php');
 
+/* Обработчики аякс запросов*/
 
+require_once( get_template_directory()  . '/ajax/get_list_news.php');
 
 /*-------------------------------------------------------
  *				Redux Framework Options Added
