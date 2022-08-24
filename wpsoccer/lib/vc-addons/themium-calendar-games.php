@@ -11,6 +11,7 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
     $leagues = get_terms([
         'taxonomy' => 'league',
         'hide_empty' => true,
+        'parent' => 0
     ]);
 
     $leagueFilter = '';
@@ -54,6 +55,29 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
 
     $seasonsSelect .= '</select>';
 
+    $gender = get_terms([
+        'taxonomy' => 'gender',
+        'hide_empty' => true,
+    ]);
+
+    $genderFilter = '';
+
+    if(isset($_REQUEST['gender']) && $_REQUEST['gender'] != '0'){
+        $genderFilter = trim(htmlspecialchars($_REQUEST['gender']));
+        $taxQuery[] = ['taxonomy' => 'gender','field' => 'slug','terms' => $genderFilter];
+    }
+
+    $genderSelect = '<select name="gender"><option value="0"> - Не выбрано - </option>';    
+    
+    if(!empty($gender)){
+        foreach ($gender as $gender) {
+            $selected = $genderFilter == $gender->slug ? 'selected' : '';
+            $genderSelect .= '<option value="' . $gender->slug . '" '.$selected.'>' . $gender->name . '</option>';
+        }
+    }
+
+    $genderSelect .= '</select>';
+
  	$output .= '<div class="calendar-games-container">';
     $output .= '<div class="calendar-games-filter-wrap">
                     <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
@@ -61,6 +85,8 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
                         '. $leagueSelect .'
                         <label for="calendar-season">Сезон:</label>
                         '. $seasonsSelect .'
+                        <label for="gender">Мужчины/Женцины:</label>
+                        '. $genderSelect .'
                         <input type="submit" value="Отфильтровать">
                     </form>
                 </div>';
@@ -142,7 +168,7 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
                                 <td class="place">'.ucfirst($matchPlace).'</td>
                                 <td class="team">'.$team_1['name'].'</td>
                                 <td class="team-logo"><img alt="'.$team_1['name'].'" src="'.$team_1_logo.'"></td>
-                                <td class="score">'.$matchScore.'</td>
+                                <td class="score"><a class="result-games-link" href="'.get_permalink($post->ID).'">'.$matchScore.'</a></td>
                                 <td class="team-logo"><img alt="'.$team_2['name'].'" src="'.$team_2_logo.'"></td>
                                 <td class="team">'.$team_2['name'].'</td>
                                 <td class="league">'.$league.'</td>

@@ -580,7 +580,7 @@ img.no-photo{
    height: 35px;
 }
 .calendar-games-filter-wrap select{
-   width: 300px;
+   width: 200px;
    height: 35px;
    display: inline;
    text-align: center;
@@ -645,10 +645,14 @@ tr.calendar-games-table__row td.team-logo img{
 }
 
 tr.calendar-games-table__row td.score{
+   padding: 8px 5px;
+}
+
+tr.calendar-games-table__row td .result-games-link{
    color: #0C629C;
    font-weight: 700;
-   padding: 8px 5px;
    font-size: 24px;
+   text-decoration: underline;
 }
 
 tr.calendar-games-table__row td.league{padding-right: 10px;}
@@ -665,7 +669,14 @@ tr.calendar-games-table__row td.league{padding-right: 10px;}
 }
 
 @media screen and (max-width:1399px){
-   .calendar-games-filter-wrap select{width: 250px;height: 35px;}
+   .calendar-games-filter-wrap label{height: auto;}
+   .calendar-games-filter-wrap select{
+      display: block;
+      width: 300px;
+      height: 35px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+   }
    
    tr.calendar-games-table__row td.team-logo{width: 50px;}
    tr.calendar-games-table__row td.team-logo img{width: 45px;height: 45px;}
@@ -674,13 +685,8 @@ tr.calendar-games-table__row td.league{padding-right: 10px;}
 
 @media screen and (max-width:868px){
    .calendar-games-container{font-size: 16px;}
-   .calendar-games-filter-wrap label{height: auto;}
 
    .calendar-games-filter-wrap select{
-      display: block;
-      width: 300px;
-      margin-right: 0px;
-      margin-bottom: 20px;
       font-size: 14px;
    }
    
@@ -693,7 +699,7 @@ tr.calendar-games-table__row td.league{padding-right: 10px;}
    
    tr.calendar-games-table__row td.place{width: 150px;}
    tr.calendar-games-table__row td.team{width: 150px;}
-   tr.calendar-games-table__row td.score{font-size: 22px;}
+   tr.calendar-games-table__row td .result-games-link{font-size: 22px;}
    tr.calendar-games-table__row td.league{width: 150px;}
 }
 

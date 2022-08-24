@@ -1202,7 +1202,7 @@ ul.popular-news-style2.themeum-default-ul li {
 	display: inline-block;
 }
 .matech-team .title h4 {
-	color: #fff;
+	color: black;
 	font-size: 44px;
 	margin-top: 20px;
 }
@@ -1219,7 +1219,7 @@ ul.popular-news-style2.themeum-default-ul li {
 .match-banner .score {
   text-align: center;
   font-size: 76px;
-  color: #fff;
+  color: #0C629C;
   font-weight: 700;
   line-height: 90px;
   position: relative;
