@@ -33,11 +33,21 @@ add_shortcode( 'themeum_birthday_block', function($atts, $content = null) {
 		$role = $playerData['themeum_position'][0];
 		$club = get_the_title($playerData['themeum_player_club'][0]);
 
-		if(empty($fullName) || empty($role) || empty($club)){
+		if(empty($fullName)){
 			continue;
 		}
 
-		$players .= '<span class="birthday-player">' . $role . ' команды "' . $club . '"</br>' . $fullName . '</span>';
+		$players .= '<span class="birthday-player">';
+
+		if(!empty($role)){
+			$players .= $role;
+		}
+
+		if(!empty($club) && !empty($playerData['themeum_player_club'][0]) && !empty($role)){
+			$players .= ' команды "' . $club . '"';
+		}
+
+		$players .= '</br>' . $fullName . '</span>';
 	}
 
 	$birthday_text = str_replace('#PLAYER#', $players, $birthday_text);
@@ -46,7 +56,6 @@ add_shortcode( 'themeum_birthday_block', function($atts, $content = null) {
 	$output .= '</p></div>';
 
 	return $output;
-
 });
 
 

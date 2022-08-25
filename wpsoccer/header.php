@@ -31,6 +31,7 @@ global $themeum_options;
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78415380-12"></script>
+    <script src="https://kit.fontawesome.com/455dc35823.js" crossorigin="anonymous"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}

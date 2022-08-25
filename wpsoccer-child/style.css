@@ -779,15 +779,15 @@ div[id*="tab-"], .ui-state-default,
 		text-align: center;
 	}
 }
-@media (max-width: 767px) and (min-width: 481px){ 
-	.count-box .vc_col-sm-3{
+@media (max-width: 767px) and (min-width: 300px){ 
+	.count-box .vc_col-sm-2{
 		width: calc(50% - 15px);
 		float: left;
 	}
 	.count-box {
 		margin-top: -45px;
 	}
-	.count-box .vc_col-sm-3:nth-child(2), 	.count-box .vc_col-sm-3:nth-child(4){
+	.count-box .vc_col-sm-2:nth-child(2), 	.count-box .vc_col-sm-2:nth-child(4), .count-box .vc_col-sm-2:nth-child(6){
 		margin-left: 30px;
 	} 
 }
@@ -2862,8 +2862,8 @@ body .top-players-row {
 	letter-spacing: -0.7px;
 }
 .b-soc {
-	padding-right: 120px !important;
-	padding-left: 120px !important;
+	padding-right: 90px !important;
+	padding-left: 90px !important;
 }
 .b-soc .soc__block--vk {
 	margin-left: -15px;

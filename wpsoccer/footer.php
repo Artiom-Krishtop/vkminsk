@@ -14,7 +14,7 @@
 
 <!-- Social footer -->
 
-<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid count-box b-soc" style="opacity: 1; padding-right: 100px;padding-left: 100px; display: flex;" ><div class="wpb_column vc_column_container vc_col-sm-3" style="width: 25%;"><div class="vc_column-inner "><div class="wpb_wrapper">
+<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid count-box b-soc" style="opacity: 1; padding-right: 100px;padding-left: 100px; display: flex;" ><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
 <div class="wpb_text_column wpb_content_element ">
 <div class="wpb_wrapper">
 <div class="soc__block soc__block--vk">
@@ -24,7 +24,7 @@
 
 </div>
 </div>
-</div></div></div><div class="wpb_column vc_column_container vc_col-sm-3" style="width: 25%;"><div class="vc_column-inner "><div class="wpb_wrapper">
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
 <div class="wpb_text_column wpb_content_element ">
 <div class="wpb_wrapper">
 <div class="soc__block soc__block--fb">
@@ -34,7 +34,7 @@
 
 </div>
 </div>
-</div></div></div><div class="wpb_column vc_column_container vc_col-sm-3" style="width: 25%;"><div class="vc_column-inner "><div class="wpb_wrapper">
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
 <div class="wpb_text_column wpb_content_element ">
 <div class="wpb_wrapper">
 <div class="soc__block soc__block--inst">
@@ -44,7 +44,7 @@
 
 </div>
 </div>
-</div></div></div><div class="wpb_column vc_column_container vc_col-sm-3" style="width: 25%;"><div class="vc_column-inner "><div class="wpb_wrapper">
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
 <div class="wpb_text_column wpb_content_element ">
 <div class="wpb_wrapper">
 <div class="soc__block soc__block--youtube">
@@ -54,7 +54,33 @@
 
 </div>
 </div>
-</div></div></div></div>
+</div></div></div>
+
+<div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+<div class="soc__block soc__block--telegram">
+<div class="soc__item soc__back soc__telegram"><a title="Следи за нами в Telegram" href="https://www.facebook.com/vcminsk" target="_blank" rel="noopener"><b>714</b><span>подписчиков</span></a></div>
+<div class="soc__item"><img class="alignnone size-full wp-image-16902" src="/wp-content/uploads/social-logo/logo-telegram.png" alt="" width="90" height="90"></div>
+</div>
+
+</div>
+</div>
+</div></div></div>
+
+<div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+<div class="soc__block soc__block--tiktok">
+<div class="soc__item soc__back soc__tiktok"><a title="Следи за нами в Tiktok" href="https://www.tiktok.com/@vcminsk?_t=8V4UIgLDHhm&_r=1" target="_blank" rel="noopener"><b>2884</b><span>подписчиков</span></a></div>
+<div class="soc__item"><img class="alignnone size-full wp-image-16902" src="/wp-content/uploads/social-logo/logo-tiktok.png" alt="" width="90" height="90"></div>
+</div>
+
+</div>
+</div>
+</div></div></div>
+
+</div>
 
 <!-- social footer -->
 
@@ -149,6 +175,7 @@
 								<li><a href="https://www.youtube.com/channel/UCPeTf0VbkGp2-6pJtZRlasA/videos" target="_blank"><i class="fa fa-youtube-play fa-3" aria-hidden="true"></i></a></li>
 								<li><a href="https://twitter.com/vc_minsk" target="_blank"><i class="fa fa-twitter fa-3" aria-hidden="true"></i></a></li>
 								<li><a href="https://t.me/vcminsk" target="_blank"><i class="fa fa-telegram fa-3" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.tiktok.com/@vcminsk?_t=8V4UIgLDHhm&_r=1" target="_blank"><i class="fab fa-tiktok fa-3" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 						<?if(get_locale()=="en_GB"):?>

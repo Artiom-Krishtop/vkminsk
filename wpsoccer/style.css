@@ -905,6 +905,58 @@ footer .row{position: relative;}
 
 /* Конец Слайдер видео из Ютуб */
 
+/* Иконки социалок футер */
+
+.b-soc .soc__telegram {
+   margin-right: -85px!important;
+}
+
+.b-soc .soc__tiktok {
+   margin-right: -55px!important;
+}
+
+.b-soc .soc__youtube {
+   margin-right: -60px!important;
+}
+
+@media (max-width: 1400px){
+   .b-soc .vc_column_container > .vc_column-inner{
+      padding: 0px!important;
+   }
+}
+
+@media (min-width:768px) and (max-width: 1200px){
+   .b-soc {
+      display: grid!important;
+      grid-template-columns: repeat(3, 33.3%);
+      grid-template-rows: repeat(2, auto);
+      padding-right: 50px !important;
+      padding-left: 50px !important;
+   }
+
+   .b-soc > .vc_column_container {
+      width: 100%!important;
+   }
+
+   .b-soc.vc_row:after, .b-soc.vc_row:before{
+      display: none;
+   }
+
+   .b-soc .soc__block--vk, 
+   .b-soc .soc__block--fb, 
+   .b-soc .soc__block--inst, 
+   .b-soc .soc__block--youtube, 
+   .b-soc .soc__block--telegram, 
+   .b-soc .soc__block--tiktok{
+      margin: auto!important;
+   }
+
+   .b-soc .soc__vk {
+      margin-top: 10px!important;
+  }
+}
+
+
 
 
 
