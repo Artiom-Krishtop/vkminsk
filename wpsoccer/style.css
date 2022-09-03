@@ -956,6 +956,17 @@ footer .row{position: relative;}
   }
 }
 
+ul#menu-footer-6{
+   margin-top: 10px!important;
+}
+
+ul#menu-footer-6 > li{
+   margin: 0px!important;
+}
+
+#menu-footer-6 a{
+   margin: 0px!important;
+}
 
 
 
