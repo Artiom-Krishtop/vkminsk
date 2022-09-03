@@ -2306,11 +2306,8 @@ body header #navigation {
 .socsec .fa:before {
 	color: #1a1a18;
 }
-.socsec .fa-facebook:before {
-	color: #2e3d9d;
-}
-.fixed-bg {
-    ;
+.socsec .fa-tiktok:before {
+	color: #1a1a18;
 }
 .home-search form#searchform input, .home-search form#searchform.act input {
 	color: #fff;
