@@ -968,6 +968,15 @@ ul#menu-footer-6 > li{
    margin: 0px!important;
 }
 
+.b-personal-field .nf-field-element{
+   width: 15px!important;
+}
+
+.b-personal-field .nf-field-description{
+   width: auto!important;
+}
+
+
 
 
 
