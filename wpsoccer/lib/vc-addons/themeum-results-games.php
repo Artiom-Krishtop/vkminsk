@@ -3,7 +3,8 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
 
     extract(shortcode_atts(array(
 		'league_id'			=> '',
-        'slider_interval'   => 5000			
+        'slider_interval'   => 5000,
+        'count_items'       => 10			
 		), $atts));
 
     global $post;
@@ -14,7 +15,7 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
 
     $args = array(
         'post_type'			=> 'fixture_reasult',
-        'posts_per_page' 	=> '10',
+        'posts_per_page' 	=> $count_items,
         'tax_query' => array(
                             array(
                                 'taxonomy' => 'league',
@@ -22,21 +23,13 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                                 'terms'    => $arr,
                             ),
                         ),
-
-        'meta_query' => array(
-         array(
-              'key' => 'themeum_goal_count',
-              'value' => '',
-              'compare' => '!=',
-         )),
-
         'meta_key'          => 'themeum_datetime',
         'orderby'           => 'meta_value',
         'order'             => 'DESC'
     );
 
     $posts = get_posts($args);
-    
+
     if(!empty($posts)){
 
         $output = '<div class="result-container"><div class="result-items">';
@@ -78,6 +71,8 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                 $team_2['logo_src'] = themeum_logo_url_by_id($team_2["themeum_club_name2"]);
 
                 $match_date = dateToRussian(date_format(date_create(get_post_meta(get_the_ID(),"themeum_datetime",true)), 'd M Y'));
+                $match_time = date_format(date_create(get_post_meta(get_the_ID(),"themeum_datetime",true)), 'H:i');
+
                 $match_place = get_post_meta(get_the_ID(),'themeum_home_ground',true);
 
                 $leagueTerms = get_the_terms(get_post(), 'league');
@@ -104,9 +99,9 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                     $output.=  '<span class="result-item__title-date">|'.mb_strtoupper($match_date).'</span>';
                 }
 
-                // if(!empty($match_date)) {
-                //     $output.=  '<span class="result-item__title-time">|'.mb_strtoupper('18:00').'</span>';
-                // }
+                if(!empty($match_time)) {
+                    $output.=  '<span class="result-item__title-time">|'.mb_strtoupper($match_time).'</span>';
+                }
                                 
                 $output .= '</div><div class="result-item-teams"><div class="result-item__team left"><div class="result-item__team-name">';
 
@@ -198,6 +193,12 @@ if (class_exists('WPBakeryVisualComposerAbstract')) {
                 "type" => "textfield",
                 "heading" => __("Legue ID", "themeum"),
                 "param_name" => "league_id",
+                "value" => "",
+            ],
+            [
+                "type" => "textfield",
+                "heading" => __("Количество записей", "themeum"),
+                "param_name" => "count_items",
                 "value" => "",
             ],
             [
