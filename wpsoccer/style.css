@@ -137,7 +137,7 @@ img.no-photo{
    max-height: 520px;
    -o-object-fit: cover;
    object-fit: cover;
-   object-position: center;
+   object-position: top;
 }
 
 .right-column .themeum-preview-thumb-item img{
@@ -145,7 +145,7 @@ img.no-photo{
    max-height: 257.5px;
    -o-object-fit: cover;
    object-fit: cover;
-   object-position: center;
+   object-position: top;
 }
 
 .themeum-preview-thumb-item .themeum-preview-thumb-item__description{
