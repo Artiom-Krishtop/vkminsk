@@ -45,7 +45,7 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                 
                 $match_result = explode(':', trim(get_post_meta(get_the_ID(),'themeum_goal_count',true)));
 
-                if(!empty($match_result[0]) && !empty($match_result[1])){
+                if($match_result[0] !== '' && $match_result[1] !== ''){
                     $team_1['goals'] = $match_result[0];
                     $team_2['goals'] = $match_result[1];
                 }else {
