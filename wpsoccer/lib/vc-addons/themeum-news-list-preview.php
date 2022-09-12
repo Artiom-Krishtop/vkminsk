@@ -44,15 +44,42 @@ add_shortcode( 'themeum_news_list_preview', function($atts, $content = null) {
         $output .= '</ul>';
     }
 
-    $args = [];
+    $importantNewsFilter = [
+        'meta_query' => [
+                [
+                    'key' => 'vazno',
+                    'value' => true,
+                ]
+            ],
+        'meta_key' => 'index_sort',
+        'orderby' => 'meta_value_num',
+        'order' => 'asc'
+    ];
+
+    $args = [
+        'orderby' => $sortby,
+        'order' => $order
+    ];
 
     if($category_id != ''){
-        $args['category'] = intval($category_id);
+        $args['category'] = $importantNewsFilter['category'] = intval($category_id);
     }
-    $args['orderby'] = $sortby;
-    $args['order'] = $order;
-    
-    $posts = get_posts($args);
+
+    $posts = get_posts($importantNewsFilter);
+    $maxCountPosts = 5;
+
+    if(count($posts) < $maxCountPosts){
+        $exclude = [];
+        
+        foreach ($posts as $news) {
+            $exclude[] = $news->ID; 
+        }
+
+        $args['exclude'] = implode(',', $exclude);
+        $args['posts_per_page'] = $maxCountPosts - count($posts);
+        
+        $posts = array_merge($posts, get_posts($args));       
+    }
 
     if(empty($posts)){
         $output .= '<div class="b-news-custom-nav-empty">Новости для данной категории отсутствуют</div>';
