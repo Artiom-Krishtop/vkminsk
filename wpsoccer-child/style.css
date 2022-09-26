@@ -1178,7 +1178,7 @@ body .player-profile-banner[style^="background-image"] .container{
 	}
 	article.category-news {
 		display: block;
-		float: left;
+		/* float: left; */
 		width: 100%;
 		margin-bottom: 40px !important;
 	}

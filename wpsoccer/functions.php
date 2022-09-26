@@ -43,9 +43,9 @@ define('THEMEUMNAME', wp_get_theme()->get( 'Name' ));
 define('THMCSS', get_template_directory_uri().'/css/');
 define('THMJS', get_template_directory_uri().'/js/');
 
-function dd($text){
+function dd($text, $die = true){
 	echo '<pre>' . print_r($text, 1) . '</pre>';
-	die();
+	if($die) die();
 }
 
 if((!class_exists('RWMB_Loader'))&&(!defined('RWMB_VER'))){
