@@ -96,11 +96,11 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                 }
 
                 if(!empty($match_date)) {
-                    $output.=  '<span class="result-item__title-date">|'.mb_strtoupper($match_date).'</span>';
+                    $output.=  '<span class="result-item__title-date">|<b>'.mb_strtoupper($match_date).'</b></span>';
                 }
 
                 if(!empty($match_time)) {
-                    $output.=  '<span class="result-item__title-time">|'.mb_strtoupper($match_time).'</span>';
+                    $output.=  '<span class="result-item__title-time">&nbsp;&nbsp;<b>'.mb_strtoupper($match_time).'</b></span>';
                 }
                                 
                 $output .= '</div><div class="result-item-teams"><div class="result-item__team left"><div class="result-item__team-name">';
