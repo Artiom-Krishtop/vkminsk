@@ -101,6 +101,27 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
 
     if(!empty($taxQuery)){
         $args['tax_query'] = $taxQuery;
+    }else {
+        /* если пустой фильтр, то по дефолту выводим все матчи текущего сезона, начиная с сентября */
+        $obDate = new DateTime();
+        $curMounth = intval($obDate->format('m'));
+        $year = intval($obDate->format('Y'));
+        
+        /* Если текщий месяц до сентября, то выводим матчи с сентября предыдущего года */
+        if($curMounth < 9){
+            $year--;
+        }
+
+        $dateValue = $year . '-09-01 00:00'; 
+
+        $args['meta_query'] = [
+            [
+                'key' => 'themeum_datetime',
+                'value' => $dateValue,
+                'compare' => '>=',
+                'type' => 'DATETIME'
+            ]
+        ];
     }
 
     $posts = get_posts($args);
@@ -117,13 +138,21 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
             $sortPosts[$month][] = $post;
         }
 
-        foreach ($sortPosts as $month => $posts) {
+        $obDate = new DateTime();
 
+        foreach ($sortPosts as $month => $posts) {
             $monthGroup = DateTime::createFromFormat('m.Y', $month);
             $month = get_russian_name_month($monthGroup->format('m'));
             $year = $monthGroup->format('Y');
+            $hidden = 'hidden';
+            $open = '';
 
-            $output .= '<tr class="calendar-games-table__row month">
+            if($monthGroup->format('m') == $obDate->format('m')){
+                $hidden = '';
+                $open = 'open';
+            }
+
+            $output .= '<tr class="calendar-games-table__row month ' . $open . '" data-toggle-target="' . $monthGroup->format('m_Y') . '">
                             <td colspan="10">
                                 <h2>'.$month.', '.$year.'</h2>
                             </td>
@@ -162,7 +191,7 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
                 
                 $league = array_shift(wp_get_post_terms($post->ID, 'league', ['fields' => 'names']));
     
-                $output .= '<tr class="calendar-games-table__row">
+                $output .= '<tr class="calendar-games-table__row" data-toggle="' . $monthGroup->format('m_Y') . '" ' . $hidden . '>
                                 <td class="date">'.$matchDate.'</td>
                                 <td class="time">'.$matchTime.'</td>
                                 <td class="place">'.ucfirst($matchPlace).'</td>
@@ -180,7 +209,19 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
     }
 
     $output .= '</div>';
-    
+
+    $output .= "<script>
+                    $().ready(function(){
+                        $('.calendar-games-table__row.month').click(function(){
+                            let toggle = $(this).data('toggle-target');
+                            let monthGames = $('tr[data-toggle=' + toggle + ']');
+
+                            monthGames.toggle(1000, 'swing', false);
+                            $(this).toggleClass('open');
+                        })
+                    });
+                </script>";
+        
     return $output;
 });
 
