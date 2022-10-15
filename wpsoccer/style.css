@@ -447,7 +447,7 @@ img.no-photo{
 .result__item .result-item-teams .result-item__team{
    display: flex;
    justify-content: flex-end;
-   width: 35%;
+   width: 40%;
 }
 
 .result__item .result-item-teams .result-item__team.left{flex-direction: row;}
@@ -478,9 +478,6 @@ img.no-photo{
    font-size: 16px;
    line-height: 16px;
    text-transform: uppercase;
-   overflow-wrap: break-word;
-   word-wrap: break-word;
-   max-width: 100px;
 }
 
 .result__item .result-item__team-city{
@@ -510,6 +507,8 @@ img.no-photo{
 }
 
 .result__item .result-item__score .result-item__score-location{
+   display: inline-block;
+   line-height: 15px;
    font-size: 10px;
    font-weight: 500;
    font-style: italic;
@@ -535,6 +534,30 @@ img.no-photo{
    border: 1px solid #2e3d9d;
    background-color: #fff;
    opacity: .75;
+}
+
+.result-container .result-item-datetime{
+   text-align: center;
+}
+
+.result-container .result-item-datetime span{
+   font-size: 13px;
+}
+
+.result-all-btn-row .result-all-btn-wrapper{
+   text-align: center;
+}
+.result-all-btn-row .result-all-btn-wrapper a {
+   display: inline-block;
+   width: 210px;
+   height: 50px;
+   padding: 12px 10px;
+   font-size: 22px;
+   font-weight: 500;
+   background-color: #2e3d9d;
+   border: 1px solid #f2f2f2;
+   color: #fff;
+   border-radius: 5px;
 }
 
 @media (max-width: 480px) {
@@ -564,6 +587,13 @@ img.no-photo{
    .result__item .result-item__team-logo img{
       width: 40px;
       height: 40px;
+   }
+
+   .result-all-btn-row .result-all-btn-wrapper a {
+      width: 170px;
+      height: 45px;
+      padding: 10px 10px;
+      font-size: 18px;
    }
 }
 

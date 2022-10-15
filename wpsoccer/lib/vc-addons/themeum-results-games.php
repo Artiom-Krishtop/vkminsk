@@ -28,14 +28,26 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
         'order'             => 'DESC'
     );
 
+    /* выводим матчи с сегоднящнего дня и на месяц */
+    $obDateTo = new DateTime();
+    $obDateFrom = new DateTime();
+    $obDateFrom->add(new DateInterval('P1M'));
+
+    $args['meta_query'] = [
+        [
+            'key' => 'themeum_datetime',
+            'value' => [$obDateTo->format('Y-m-d H:s'), $obDateFrom->format('Y-m-d H:s')],
+            'compare' => 'BETWEEN',
+            'type' => 'DATETIME'
+        ]
+    ];
+
     $posts = get_posts($args);
 
     if(!empty($posts)){
-
         $output = '<div class="result-container"><div class="result-items">';
 
         foreach ($posts as $key => $post){
-
             setup_postdata($post);
             
             $team_1    = get_post_meta(get_the_ID(),'team_1_group',true);
@@ -78,29 +90,10 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                 $leagueTerms = get_the_terms(get_post(), 'league');
                 $league['name'] = $leagueTerms[0]->name;
 
-                $gender = [];
-
-                if(preg_match('/\((.*)\)/', $league['name'], $gender)){
-                    $league['gender'] = $gender[1];
-                    $league['name'] = trim(str_replace($gender[0], '', $league['name']));
-                }
-
                 $output.= '<div class="result__item"><div class="result-item-title">';
                                 
                 if(!empty($league['name'])) {
                     $output.=  '<span class="result-item__title-legue">'.mb_strtoupper($league['name']).'</span>';
-                }
-
-                if(!empty($league['gender'])) {
-                    $output.=  '<span class="result-item__title-gender">|'.mb_strtoupper($league['gender']).'</span>';
-                }
-
-                if(!empty($match_date)) {
-                    $output.=  '<span class="result-item__title-date">|<b>'.mb_strtoupper($match_date).'</b></span>';
-                }
-
-                if(!empty($match_time)) {
-                    $output.=  '<span class="result-item__title-time">&nbsp;&nbsp;<b>'.mb_strtoupper($match_time).'</b></span>';
                 }
                                 
                 $output .= '</div><div class="result-item-teams"><div class="result-item__team left"><div class="result-item__team-name">';
@@ -148,7 +141,19 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                     $output.=  '<img src="/wp-content/themes/wpsoccer/images/logo-footer@2x.png" width="40px" height="40px" alt="">';
                 }
                                 
-                $output .= '</div></div></div></div>';
+                $output .= '</div></div></div>';
+
+                $output .= '<div class="result-item-datetime">';
+
+                if(!empty($match_date)) {
+                    $output.=  '<span class="result-item__title-date"><b>'.mb_strtoupper($match_date).'</b></span>';
+                }
+
+                if(!empty($match_time)) {
+                    $output.=  '<span class="result-item__title-time">&nbsp;&nbsp;<b>'.mb_strtoupper($match_time).'</b></span>';
+                }
+
+                $output .= '</div></div>';
             }
 	    }
 
@@ -161,6 +166,7 @@ add_shortcode( 'themeum_result_games', function($atts, $content = null) {
                                 dots:true,
                                 nav:false,
                                 autoplay: true,
+                                autoplayHoverPause:true,
                                 autoplayTimeout:". $slider_interval .",
                                 responsive:{ 
                                     0:{
