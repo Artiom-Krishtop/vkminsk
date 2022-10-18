@@ -96,7 +96,7 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
         'posts_per_page' 	=> $count_lines,
         'meta_key'          => 'themeum_datetime',
         'orderby'           => 'meta_value',
-        'order'             => 'DESC'
+        'order'             => 'ASC'
     );
 
     if(!empty($taxQuery)){
@@ -139,13 +139,13 @@ add_shortcode( 'themeum_calendar_games', function($atts, $content = null) {
         }
 
         $obDate = new DateTime();
+        $hidden = 'hidden';
+        $open = '';
 
         foreach ($sortPosts as $month => $posts) {
             $monthGroup = DateTime::createFromFormat('m.Y', $month);
             $month = get_russian_name_month($monthGroup->format('m'));
             $year = $monthGroup->format('Y');
-            $hidden = 'hidden';
-            $open = '';
 
             if($monthGroup->format('m') == $obDate->format('m')){
                 $hidden = '';
