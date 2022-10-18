@@ -1959,7 +1959,6 @@ body header #navigation {
 .sponsors-carousel .bx-wrapper .bx-prev, .sponsors-carousel .bx-wrapper .bx-next, body #page .sponsors-carousel .owl-nav .owl-prev, body #page .sponsors-carousel .owl-nav .owl-next {
 	background: none !important;
 	color: #b0afaf;
-	width: auto !important;
     height: 100% !important;
     bottom: 0;
 }
@@ -1969,7 +1968,7 @@ body #page .sponsors-carousel .owl-nav .owl-next {
 body #page .sponsors-carousel .owl-nav .owl-prev {
 	left: 0;
 }
-.sponsors-carousel .bx-wrapper .bx-prev:before, .sponsors-carousel .owl-prev:before, .sponsors-carousel .bx-wrapper .bx-next:before, .sponsors-carousel .owl-next:before {
+.sponsors-carousel .bx-wrapper .bx-prev:before, .sponsors-carousel .bx-wrapper .bx-next:before {
 	width: auto;
 	height: auto;
 }
@@ -2789,6 +2788,17 @@ body header #navigation {
 .sponsors-carousel .bx-wrapper .bx-prev:before, .sponsors-carousel .owl-prev:before {
 	margin-left: 3px;
 	font-size: 35px;
+}
+
+@media (min-width: 1200px){
+	.sponsors-carousel .owl-next:before {
+		font-size: 60px;
+		right: -15px;
+	}
+	.sponsors-carousel .owl-prev:before {
+		font-size: 60px;
+		left: -15px;
+	}
 }
 .allspons .sponsors-carousel {
 	margin-bottom: 43px !important;
