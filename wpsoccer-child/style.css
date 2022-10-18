@@ -4210,12 +4210,19 @@ body .player-profile-banner[style^="background-image"] {
 	font-weight: normal;
 }
 
-.styleimg {
-	border-radius: 50%;
+/* Страница контактов */
+
+.b-contact-person-data{
+	margin: 20px 0px;
+}
+ 
+.b-contact-person-data .styleimg {
+	border-radius: 30%;
 	width: 150px;
-	height: 150px;
+	height: 170px;
 	overflow: hidden;
 }
+
 .styleimg img {
 	margin: 0px;
 	position: relative;
@@ -4247,6 +4254,42 @@ body .player-profile-banner[style^="background-image"] {
     background-size: 65%;
     left: 10%;
     bottom: 10px;
+}
+
+.b-contact-person-data .styleimg::after {
+	background-size: 100% 100%;
+	width: 90px;
+    height: 90px;
+	left: 0;
+}
+
+@media (min-width:768px) and (max-width: 991px){
+	.b-contact-person-data {
+		margin-left: 0px!important;
+		margin-right: 0px!important;
+	}
+}
+
+@media (max-width: 768px){
+	.b-contact-person-data {
+		margin: 50px 0px;
+		border-bottom: 1px solid #949494;
+	}
+
+	.b-contact-person-data .styleimg {
+		margin-left: 25px;
+	}
+
+	.b-contact-person-data .wpb_content_element {
+		margin-bottom: 10px!important;
+	}
+
+	.b-contact-person-data .styleimg::after {
+		width: 80px;
+		height: 80px;
+		left: 0;
+		background-size: 100% 100%;
+	}
 }
 
 aside figure figcaption {
