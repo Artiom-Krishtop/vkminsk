@@ -20,13 +20,13 @@ global $themeum_options;
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css"/>	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css"/>	
 	<link rel="stylesheet" href="/wp-content/themes/wpsoccer-child/css/selectric.css"/>	
 	<?php wp_head(); 
 		wp_enqueue_style( 'font-awesome-4.7.0', get_template_directory_uri() . '/font-awesome-4.7.0/css/font-awesome.min.css');
 		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/circletype.min.js', array ( 'jquery' ), 1.1, true);
 	?>
-	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script type="text/javascript" src="/wp-content/themes/wpsoccer-child/js/jquery.selectric.min.js"></script>
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
